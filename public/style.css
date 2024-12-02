@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  padding: 0% 1%;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.toolbar {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+#editor {
+  padding: 20px;
+  font-size: 16px;
+
+  width: 70%;
+  margin: 20px auto; /* Center-align the editor */
+  box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.1);
+  min-height: 200px;
+  height: 500px;
+  border: none;
+  outline: none;
+  resize: none;
+}
+.status-bar {
+  padding: 10px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+}
+
+.toolbar-icon {
+  width: 20px; /* Adjust the width as needed */
+  height: auto; /* Keeps the aspect ratio intact */
+  margin: 5px; /* Adds spacing between icons */
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  width: 100%;
+}
+
+.toolbar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+  color: #333;
+}

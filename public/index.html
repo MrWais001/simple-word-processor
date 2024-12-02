@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Word Processor</title>
+    <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="toolbar">
+      <select id="fontFamily">
+        <option value="Arial">Arial</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Comic Sans MS">Comic Sans MS</option>
+        <option value="Trebuchet MS">Trebuchet MS</option>
+      </select>
+
+      <select id="fontSize">
+        <!-- Options from 6 to 50 -->
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+      </select>
+      <button onclick="format('bold')">
+        <img class="toolbar-icon" src="assets/icons/bold.png" alt="Bold" />
+      </button>
+      <button onclick="format('italic')">
+        <img class="toolbar-icon" src="assets/icons/italic.png" alt="Italic" />
+      </button>
+      <button onclick="format('underline')">
+        <img
+          class="toolbar-icon"
+          src="assets/icons/underline.png"
+          alt="Underline"
+        />
+      </button>
+      <button onclick="format('justifyLeft')">
+        <img
+          class="toolbar-icon"
+          src="assets/icons/align-left.png"
+          alt="Align Left"
+        />
+      </button>
+      <button onclick="format('justifyCenter')">
+        <img
+          class="toolbar-icon"
+          src="assets/icons/align-center.png"
+          alt="Align Center"
+        />
+      </button>
+      <button onclick="format('justifyRight')">
+        <img
+          class="toolbar-icon"
+          src="assets/icons/align-right.png"
+          alt="Align Right"
+        />
+      </button>
+      <button onclick="undo()">
+        <img class="toolbar-icon" src="assets/icons/undo.png" alt="undo" />
+      </button>
+      <button onclick="redo()">
+        <img class="toolbar-icon" src="assets/icons/redo.png" alt="redo" />
+      </button>
+      <button onclick="exportToFile()">
+        <img class="toolbar-icon" src="assets/icons/save.png" alt="Save" />
+      </button>
+      <button onclick="printDocument()">
+        <img class="toolbar-icon" src="assets/icons/Print.png" l alt="Print" />
+      </button>
+
+      <label for="fileInput">
+        <img class="toolbar-icon" src="assets/icons/Upload.png" alt="Upload" />
+      </label>
+      <input
+        type="file"
+        id="fileInput"
+        onchange="importFromFile()"
+        style="display: none"
+      />
+    </div>
+    <div id="editor" contenteditable="true" spellcheck="true">
+      Start typing here...
+    </div>
+    <div class="status-bar">
+      Words: <span id="wordCount">0</span> | Characters:
+      <span id="charCount">0</span>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
